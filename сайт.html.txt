@@ -257,22 +257,27 @@ h2
   margin-bottom: 12px;
 }
 
+/* делаем меню контейнером и стаим в нем сылки на какие то пунткты в столбик, так же выравниваем их по центру и настраиваем растояние между ссылками */
 .nav 
 {
-   
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 14px;
 }
 
-.nav a:hover { color: #fff; }
+/* в том коде котоый был дан у сылок был отступ большой сейчас я это убираю */
+.nav a 
+{
+  margin-left: 0; 
+}
 
+/* настройка корзины */
 .cart 
 {
-  color: #2F6B3A;
-  background: #F2C94C;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 18px;
-  border-radius: 20px;
-  margin-left: 32px;
+  margin-top: 4px; 
+  margin-left: 0;
 }
 
 /* Первый экран */
