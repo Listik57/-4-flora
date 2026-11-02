@@ -1,0 +1,409 @@
+/* Магазин растений «Флора» — десктопная версия */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #243324;
+    background: #FFFFFF;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    background: #2F6B3A;
+    padding: 16px 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.nav a {
+    color: #DDEBD9;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 16px;
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+.cart {
+    color: #2F6B3A;
+    background: #F2C94C;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-left: 32px;
+}
+
+/* Первый экран */
+.hero {
+    background: #F4F8F2;
+    padding: 64px 0;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #5A6B58;
+    margin-bottom: 28px;
+}
+
+.hero-img {
+    width: 50%;
+    border-radius: 12px;
+    display: block;
+}
+
+.btn {
+    display: inline-block;
+    background: #2F6B3A;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 32px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #245A2E;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Секции */
+.section {
+    padding: 64px 0;
+}
+
+.section-alt {
+    background: #F4F8F2;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+/* Каталог */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #E2EBDF;
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(25% - 18px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 19px;
+    font-weight: bold;
+    color: #2F6B3A;
+}
+
+/* Доставка */
+.features {
+    display: flex;
+    gap: 32px;
+}
+
+.feature {
+    width: calc(33.333% - 22px);
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px;
+}
+
+.feature-num {
+    width: 44px;
+    height: 44px;
+    background: #2F6B3A;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #5A6B58;
+    font-size: 15px;
+}
+
+/* Подвал */
+.footer {
+    background: #243324;
+    color: #B9C9B5;
+    padding: 44px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.footer-col h4 {
+    color: #F2C94C;
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    color: #fff;
+}
+
+
+
+/*Подправила код выше чтобы было удобнее смотреть что там.*/
+/*Настройка для мобильной версии*/
+
+@media (max-width: 768px) {
+
+    /* Шапка */
+    /* делаем так чтобы корзина логотип и чтото еще встали в колонку под друг другом */
+    .header-inner {
+        flex-direction: column;
+    }
+
+    /* выше в коде margin-right: auto команда отодвигала лого влево, мы обнуляем это и делаем так чтобы лого встало по середине, а между лого и меню было растояние в 12px  */
+    .logo {
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+
+    /* делаем меню контейнером и стаим в нем сылки на какие то пунткты в столбик, так же выравниваем их по центру и настраиваем растояние между ссылками */
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    /* в том коде котоый был дан у сылок был отступ большой сейчас я это убираю */
+    .nav a {
+        margin-left: 0;
+    }
+
+    /* настройка корзины */
+    .cart {
+        margin-top: 4px;
+        margin-left: 0;
+    }
+
+    /* Первый экран */
+
+    /* уменьш. отступы низ верх */
+    .hero {
+        padding: 40px 0;
+    }
+
+    /* настраиваем растояние между текстом и картинками */
+    .hero-inner {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    /* ширина которую занимают текст и изображение */
+    .hero-text, .hero-img {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Секции */
+    .section {
+        padding: 64px 0;
+    }
+
+    .section-alt {
+        background: #F4F8F2;
+    }
+
+    h2 {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    /* Каталог */
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .card {
+        background: #fff;
+        border: 1px solid #E2EBDF;
+        border-radius: 10px;
+        overflow: hidden;
+        width: calc(25% - 18px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .card-body {
+        padding: 16px;
+    }
+
+    .card h3 {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .price {
+        font-size: 19px;
+        font-weight: bold;
+        color: #2F6B3A;
+    }
+
+    /* Доставка */
+    .features {
+        display: flex;
+        gap: 32px;
+    }
+
+    .feature {
+        width: calc(33.333% - 22px);
+        background: #fff;
+        border-radius: 10px;
+        padding: 28px;
+    }
+
+    .feature-num {
+        width: 44px;
+        height: 44px;
+        background: #2F6B3A;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+
+    .feature h3 {
+        margin-bottom: 10px;
+    }
+
+    .feature p {
+        color: #5A6B58;
+        font-size: 15px;
+    }
+
+    /* Подвал */
+    .footer {
+        background: #243324;
+        color: #B9C9B5;
+        padding: 44px 0;
+    }
+
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .footer-col h4 {
+        color: #F2C94C;
+        margin-bottom: 12px;
+    }
+
+    .footer-col a {
+        color: #fff;
+    }
+}
